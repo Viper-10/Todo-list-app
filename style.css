@@ -1,0 +1,140 @@
+/* CSS RESET */
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Miscellaneous */
+body {
+  background-color: #fcf2de;
+}
+.container {
+  background-color: rgb(240, 248, 255);
+  margin-top: 100px;
+  width: min(1000px, 90%);
+  margin-inline: auto;
+  border-radius: 8px;
+  box-shadow: 2px 2px 1px 2px rgb(111, 109, 109);
+  padding: 3rem;
+}
+
+/* Icons */
+.icon {
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.fa-pencil {
+  color: #7be2f7;
+  border: 1px solid #7be2f7;
+}
+.fa-pencil:hover {
+  background-color: #7be2f7;
+  color: white;
+}
+.fa-trash-can {
+  border: 1px solid grey;
+  color: grey;
+}
+.fa-trash-can:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* utilities */
+.btn {
+  padding: 0.25rem;
+  transition: 0.3s transform;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scale(0.9);
+}
+.add-task {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Header */
+.main-heading {
+  font-size: 2rem;
+}
+.sub-text {
+  background-color: #f6e17c;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  display: inline-block;
+}
+/* Main */
+.add-task-btn {
+  color: #29d0f2;
+  border: 1px solid #29d0f2;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+.add-task-btn:hover {
+  color: white;
+  background-color: #29d0f2;
+}
+.todo-container {
+  margin-top: 3rem;
+}
+.todo-list-header {
+  list-style: none;
+  display: flex;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.todo-items {
+  list-style: none;
+}
+.todo-item {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.todo-status {
+  display: inline-block;
+  border: 1px solid rgb(144, 144, 144);
+  color: grey;
+  padding: 10px;
+  border-radius: 4px;
+  transition: 0.3s transform;
+  cursor: pointer;
+}
+.todo-status:hover {
+  transform: scale(0.9);
+}
+.list-item-1 {
+  flex: 10%;
+}
+.list-item-2 {
+  flex: 45%;
+}
+.list-item-3 {
+  flex: 25%;
+}
+.list-item-4 {
+  flex: 10%;
+}
+.list-item-5 {
+  flex: 10%;
+}
+/* Footer */
+footer {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}

@@ -6,7 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List App</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/b2d1287dec.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header>
+        <h2 class="main-heading">TODO List Demo App</h2>
+        <span class="sub-text">Do it now</span>
+      </header>
+      <main>
+        <section class="add-task">
+          <div class="btn add-task-btn">Add Task</div>
+        </section>
+        <section class="todo-container">
+          <ul>
+            <li class="todo-list-header">
+              <div class="list-item list-item-1">#</div>
+              <div class="list-item list-item-2">Task Name</div>
+              <div class="list-item list-item-3">Status</div>
+              <div class="list-item list-item-4">Edit</div>
+              <div class="list-item list-item-5">Remove</div>
+            </li>
+          </ul>
+          <ul class="todo-items">
+            <li class="todo-item">
+              <div class="list-item list-item-1">24</div>
+              <div class="list-item list-item-2">Buy Grocery</div>
+              <div class="list-item list-item-3">
+                <span class="todo-status">Todo</span>
+              </div>
+              <div class="list-item list-item-4">
+                <i class="fa-solid fa-pencil icon"></i>
+              </div>
+              <div class="list-item list-item-5">
+                <i class="fa-solid fa-trash-can icon"></i>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <footer>Copyrights&copy; by Priyadharshan R, 2022</footer>
+  </body>
 </html>

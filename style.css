@@ -48,6 +48,7 @@ body {
 .btn {
   padding: 0.25rem;
   transition: 0.3s transform;
+  border-radius: 4px;
   cursor: pointer;
 }
 .btn:hover {
@@ -70,6 +71,7 @@ body {
   display: inline-block;
 }
 /* Main */
+/* add-task section */
 .add-task-btn {
   color: #29d0f2;
   border: 1px solid #29d0f2;
@@ -81,6 +83,33 @@ body {
   color: white;
   background-color: #29d0f2;
 }
+.add-task-form {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-top: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.add-task-submit-btn {
+  align-self: center;
+  color: red;
+  padding-inline: 1rem;
+  border: 1px solid red;
+}
+.add-task-submit-btn:hover {
+  color: white;
+  background-color: rgb(253, 51, 51);
+}
+.todo-content {
+  display: inline-block;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1.25rem;
+}
 .todo-container {
   margin-top: 3rem;
 }
@@ -89,7 +118,7 @@ body {
   display: flex;
   font-weight: bold;
   border-bottom: 2px solid black;
-  padding-bottom: 10px;
+  padding: 10px;
   text-align: center;
 }
 .todo-items {
@@ -104,16 +133,41 @@ body {
 }
 .todo-status {
   display: inline-block;
-  border: 1px solid rgb(144, 144, 144);
-  color: grey;
   padding: 10px;
-  border-radius: 4px;
   transition: 0.3s transform;
   cursor: pointer;
+  border-radius: 4px;
 }
 .todo-status:hover {
   transform: scale(0.9);
 }
+
+/* status of todo */
+.todo {
+  border: 1px solid rgb(144, 144, 144);
+  color: grey;
+}
+.todo:hover {
+  color: white;
+  background-color: grey;
+}
+.in-progress {
+  border: 1px solid #ffc821;
+  color: #ffc821;
+}
+.in-progress:hover {
+  color: white;
+  background-color: #ffc821;
+}
+.complete {
+  color: #409b71;
+  border: 1px solid #409b71;
+}
+.complete:hover {
+  color: white;
+  background-color: #409b71;
+}
+
 .list-item-1 {
   flex: 10%;
 }

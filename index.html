@@ -20,8 +20,21 @@
         <span class="sub-text">Do it now</span>
       </header>
       <main>
-        <section class="add-task">
-          <div class="btn add-task-btn">Add Task</div>
+        <section>
+          <div class="add-task">
+            <div class="btn add-task-btn">Add Task</div>
+          </div>
+          <form class="add-task-form">
+            <div class="input-wrapper">
+              <label for="todo-content-label">Task: </label>
+              <input
+                type="text"
+                name="todo-content-label"
+                class="todo-content"
+              />
+            </div>
+            <input type="submit" value="Add" class="btn add-task-submit-btn" />
+          </form>
         </section>
         <section class="todo-container">
           <ul>
@@ -38,7 +51,33 @@
               <div class="list-item list-item-1">24</div>
               <div class="list-item list-item-2">Buy Grocery</div>
               <div class="list-item list-item-3">
-                <span class="todo-status">Todo</span>
+                <span class="todo-status todo">Todo</span>
+              </div>
+              <div class="list-item list-item-4">
+                <i class="fa-solid fa-pencil icon"></i>
+              </div>
+              <div class="list-item list-item-5">
+                <i class="fa-solid fa-trash-can icon"></i>
+              </div>
+            </li>
+            <li class="todo-item">
+              <div class="list-item list-item-1">25</div>
+              <div class="list-item list-item-2">Send Email</div>
+              <div class="list-item list-item-3">
+                <span class="todo-status in-progress">In Progress</span>
+              </div>
+              <div class="list-item list-item-4">
+                <i class="fa-solid fa-pencil icon"></i>
+              </div>
+              <div class="list-item list-item-5">
+                <i class="fa-solid fa-trash-can icon"></i>
+              </div>
+            </li>
+            <li class="todo-item">
+              <div class="list-item list-item-1">28</div>
+              <div class="list-item list-item-2">Finish Assignment</div>
+              <div class="list-item list-item-3">
+                <span class="todo-status complete">Complete</span>
               </div>
               <div class="list-item list-item-4">
                 <i class="fa-solid fa-pencil icon"></i>

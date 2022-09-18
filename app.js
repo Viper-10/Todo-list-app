@@ -3,6 +3,10 @@ const TODO_STATUS = {
   IN_PROGRESS: "in-progress",
   COMPLETE: "complete",
 };
+const nextStatusMap = {};
+nextStatusMap[TODO_STATUS.TODO] = TODO_STATUS.IN_PROGRESS;
+nextStatusMap[TODO_STATUS.IN_PROGRESS] = TODO_STATUS.COMPLETE;
+nextStatusMap[TODO_STATUS.COMPLETE] = TODO_STATUS.TODO;
 
 const todoList = [];
 
@@ -35,7 +39,7 @@ const todoULList = document.querySelector(".todo-items");
   addTaskBtn.addEventListener("click", showForm);
   addTaskForm.addEventListener("submit", onAddTaskFormSubmit);
   cancelTaskBtn.addEventListener("click", cancelForm);
-  todoULList.addEventListener("click", todoListClickHandler);
+  todoULList.addEventListener("click", todoListClickEventDelegator);
 })();
 
 function getTaskMarkup(task, index) {
@@ -63,7 +67,7 @@ function renderTodoList() {
     const noTodosDiv = document.createElement("div");
     noTodosDiv.textContent = "Hurray! No todos for now, great job";
 
-    noTodosDiv.classList.add("noTodo");
+    noTodosDiv.classList.add("noTodoText");
 
     todoULList.innerHTML = "";
 
@@ -92,28 +96,50 @@ function deleteTodo(target) {
   return;
 }
 function changeTodoStatus(target) {
-  const nextStatusMap = {};
-
-  nextStatusMap[TODO_STATUS.TODO] = TODO_STATUS.IN_PROGRESS;
-  nextStatusMap[TODO_STATUS.IN_PROGRESS] = TODO_STATUS.COMPLETE;
-  nextStatusMap[TODO_STATUS.COMPLETE] = TODO_STATUS.TODO;
-
-  const currentStatus = target.value;
+  const currentStatus = target.textContent;
   const nextStatus = nextStatusMap[currentStatus];
 
-  const liParent = target.parentElement.parentElement;
-  const index = liParent.id;
+  const parentLi = target.parentElement.parentElement;
+
+  const index = parentLi.id;
 
   todoList[index].status = nextStatus;
-  // changing markup of existing li in the browser
-
-  console.log(liParent.firstElementChild);
+  target.textContent = nextStatus;
+  target.classList.remove(currentStatus);
+  target.classList.add(nextStatus);
 }
-function todoListClickHandler(e) {
+function editTodo(target) {
+  const parentLi = target.parentElement.parentElement;
+  const todoContentDiv = parentLi.firstElementChild;
+  const inputElement = document.createElement("input");
+
+  inputElement.classList.add("todo-content-input");
+  inputElement.value = todoContentDiv.textContent;
+
+  parentLi.removeChild(todoContentDiv);
+  parentLi.prepend(inputElement);
+
+  inputElement.focus();
+
+  inputElement.addEventListener("focusout", () => {
+    const newTodoContent = inputElement.value;
+
+    const newTodoContentDiv = document.createElement("div");
+    newTodoContentDiv.classList.add("list-item");
+    newTodoContentDiv.classList.add("list-item-1");
+    newTodoContentDiv.textContent = newTodoContent;
+
+    parentLi.removeChild(inputElement);
+    parentLi.prepend(newTodoContentDiv);
+  });
+}
+function todoListClickEventDelegator(e) {
   if (e.target.classList.contains("fa-trash-can")) {
     deleteTodo(e.target);
   } else if (e.target.classList.contains("todo-status")) {
     changeTodoStatus(e.target);
+  } else if (e.target.classList.contains("fa-pencil")) {
+    editTodo(e.target);
   }
 }
 function changeAddTaskFormDisplay(option) {
@@ -147,8 +173,9 @@ function cancelForm() {
 }
 function addTodoToTodoList({ content, status }) {
   let todoAlreadyExists = false;
+
   todoList.forEach((todo) => {
-    if (todo.content.trim() === content) {
+    if (todo.content.trim() == content.trim()) {
       alert("The todo already exists!");
       todoAlreadyExists = true;
       return;

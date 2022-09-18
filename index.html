@@ -33,64 +33,37 @@
                 class="todo-content"
               />
             </div>
-            <input
-              type="submit"
-              value="Add Todo"
-              class="btn add-task-submit-btn"
-            />
+
+            <div class="input-wrapper">
+              <label for="todo-status">Status: </label>
+              <select name="todo-status" id="todo-status">
+                <option value="todo" selected>Todo</option>
+                <option value="in-progress">InProgress</option>
+                <option value="complete">Complete</option>
+              </select>
+            </div>
+
+            <div class="submit-options">
+              <input
+                type="submit"
+                value="Add Todo"
+                class="btn add-task-submit-btn"
+              />
+              <span class="btn cancel-task-submit-btn">Cancel</span>
+            </div>
           </form>
         </section>
         <section class="todo-container">
           <ul>
             <li class="todo-list-header">
-              <div class="list-item list-item-1">#</div>
-              <div class="list-item list-item-2">Task Name</div>
-              <div class="list-item list-item-3">Status</div>
-              <div class="list-item list-item-4">Edit</div>
-              <div class="list-item list-item-5">Remove</div>
+              <div class="list-item list-item-1">Task Name</div>
+              <div class="list-item list-item-2">Status</div>
+              <div class="list-item list-item-3">Edit</div>
+              <div class="list-item list-item-4">Remove</div>
             </li>
           </ul>
-          <ul class="todo-items">
-            <li class="todo-item">
-              <div class="list-item list-item-1">24</div>
-              <div class="list-item list-item-2">Buy Grocery</div>
-              <div class="list-item list-item-3">
-                <span class="todo-status todo">Todo</span>
-              </div>
-              <div class="list-item list-item-4">
-                <i class="fa-solid fa-pencil icon"></i>
-              </div>
-              <div class="list-item list-item-5">
-                <i class="fa-solid fa-trash-can icon"></i>
-              </div>
-            </li>
-            <li class="todo-item">
-              <div class="list-item list-item-1">25</div>
-              <div class="list-item list-item-2">Send Email</div>
-              <div class="list-item list-item-3">
-                <span class="todo-status in-progress">In Progress</span>
-              </div>
-              <div class="list-item list-item-4">
-                <i class="fa-solid fa-pencil icon"></i>
-              </div>
-              <div class="list-item list-item-5">
-                <i class="fa-solid fa-trash-can icon"></i>
-              </div>
-            </li>
-            <li class="todo-item">
-              <div class="list-item list-item-1">28</div>
-              <div class="list-item list-item-2">Finish Assignment</div>
-              <div class="list-item list-item-3">
-                <span class="todo-status complete">Complete</span>
-              </div>
-              <div class="list-item list-item-4">
-                <i class="fa-solid fa-pencil icon"></i>
-              </div>
-              <div class="list-item list-item-5">
-                <i class="fa-solid fa-trash-can icon"></i>
-              </div>
-            </li>
-          </ul>
+          <!-- default todo content directly loads from js -->
+          <ul class="todo-items"></ul>
         </section>
       </main>
     </div>

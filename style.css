@@ -19,6 +19,7 @@ body {
   border-radius: 8px;
   box-shadow: 2px 2px 1px 2px rgb(111, 109, 109);
   padding: 3rem;
+  margin-bottom: 5rem;
 }
 
 /* Icons */
@@ -31,17 +32,10 @@ body {
   color: #7be2f7;
   border: 1px solid #7be2f7;
 }
-.fa-pencil:hover {
-  background-color: #7be2f7;
-  color: white;
-}
+
 .fa-trash-can {
   border: 1px solid grey;
   color: grey;
-}
-.fa-trash-can:hover {
-  background-color: grey;
-  color: white;
 }
 
 /* utilities */
@@ -51,9 +45,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-.btn:hover {
-  transform: scale(0.9);
-}
+
 .add-task {
   display: flex;
   justify-content: flex-end;
@@ -79,10 +71,7 @@ body {
   background-color: white;
   cursor: pointer;
 }
-.add-task-btn:hover {
-  color: white;
-  background-color: #29d0f2;
-}
+
 .add-task-form {
   background-color: #f4f4f4;
   padding: 1rem;
@@ -92,20 +81,34 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+.submit-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 .add-task-submit-btn {
-  align-self: center;
   color: red;
   padding-inline: 1rem;
   border: 1px solid red;
 }
-.add-task-submit-btn:hover {
-  color: white;
-  background-color: rgb(253, 51, 51);
+
+.cancel-task-submit-btn {
+  border: 1px solid black;
+  color: black;
+  padding-inline: 1rem;
+}
+
+.noTodo {
+  background-color: #faeca4;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
 }
 .todo-content {
   display: inline-block;
-  width: 90%;
-  margin: auto;
+  width: 75%;
+  margin-inline: auto;
   padding: 10px;
   border-radius: 4px;
   font-size: 1.25rem;
@@ -133,14 +136,11 @@ body {
 }
 .todo-status {
   display: inline-block;
-  padding: 10px;
+  padding: 5px;
+  width: 95px;
   transition: 0.3s transform;
   cursor: pointer;
   border-radius: 4px;
-}
-
-.todo-status:hover {
-  transform: scale(0.9);
 }
 
 /* status of todo */
@@ -148,42 +148,30 @@ body {
   border: 1px solid rgb(144, 144, 144);
   color: grey;
 }
-.todo:hover {
-  color: white;
-  background-color: grey;
-}
+
 .in-progress {
   border: 1px solid #ffc821;
   color: #ffc821;
 }
-.in-progress:hover {
-  color: white;
-  background-color: #ffc821;
-}
+
 .complete {
   color: #409b71;
   border: 1px solid #409b71;
 }
-.complete:hover {
-  color: white;
-  background-color: #409b71;
-}
 
 .list-item-1 {
-  flex: 10%;
-}
-.list-item-2 {
   flex: 45%;
 }
-.list-item-3 {
+.list-item-2 {
   flex: 25%;
 }
+.list-item-3 {
+  flex: 15%;
+}
 .list-item-4 {
-  flex: 10%;
+  flex: 15%;
 }
-.list-item-5 {
-  flex: 10%;
-}
+
 /* Footer */
 footer {
   background-color: black;
@@ -194,11 +182,107 @@ footer {
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .fa-pencil:hover {
+    background-color: #7be2f7;
+    color: white;
+  }
+  .fa-trash-can:hover {
+    background-color: grey;
+    color: white;
+  }
+  .btn:hover {
+    transform: scale(0.9);
+  }
+  .add-task-btn:hover {
+    color: white;
+    background-color: #29d0f2;
+  }
+  .add-task-submit-btn:hover {
+    color: white;
+    background-color: rgb(253, 51, 51);
+  }
+  .cancel-task-submit-btn:hover {
+    color: white;
+    background-color: black;
+  }
+  .todo-status:hover {
+    transform: scale(0.9);
+  }
+  .todo:hover {
+    color: white;
+    background-color: grey;
+  }
+  .in-progress:hover {
+    color: white;
+    background-color: #ffc821;
+  }
+  .complete:hover {
+    color: white;
+    background-color: #409b71;
+  }
+}
+@media (max-width: 1024px) {
+  .fa-pencil:active {
+    background-color: #7be2f7;
+    color: white;
+  }
+  .fa-trash-can:active {
+    background-color: grey;
+    color: white;
+  }
+  .btn:active {
+    transform: scale(0.9);
+  }
+  .add-task-btn:active {
+    color: white;
+    background-color: #29d0f2;
+  }
+  .add-task-submit-btn:active {
+    color: white;
+    background-color: rgb(253, 51, 51);
+  }
+  .cancel-task-submit-btn:active {
+    color: white;
+    background-color: black;
+  }
+  .todo-status:active {
+    transform: scale(0.9);
+  }
+  .todo:active {
+    color: white;
+    background-color: grey;
+  }
+  .in-progress:active {
+    color: white;
+    background-color: #ffc821;
+  }
+  .complete:active {
+    color: white;
+    background-color: #409b71;
+  }
+}
 @media (max-width: 600px) {
-  .todo-status {
+  .main-heading {
+    font-size: 22px;
+  }
+  .sub-text {
+    font-size: 14px;
+    padding: 5px;
+  }
+  .todo-list-header > * {
     font-size: 12px;
   }
-  .icon {
+  .list-item-1 {
     font-size: 12px;
+  }
+
+  .todo-status {
+    font-size: 10px;
+    width: 50px;
+    padding: 2px;
+  }
+  .icon {
+    font-size: 6px;
   }
 }
